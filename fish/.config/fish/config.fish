@@ -93,10 +93,12 @@ if test -d ~/Developer
     alias dev="cd ~/Developer/"
     alias ICL="cd ~/Developer/ICL/"
     alias cloned="cd ~/Developer/cloned/"
+    alias teaching="cd ~/Developer/teaching/"
 else
     alias dev="cd ~/dev/"
     alias ICL="cd ~/dev/ICL/"
     alias cloned="cd ~/dev/cloned/"
+    alias teaching="cd ~/dev/teaching/"
 end
 alias dt="cd ~/Desktop/"
 alias doc="cd ~/Documents/"
