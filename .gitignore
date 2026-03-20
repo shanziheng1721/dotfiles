@@ -2,3 +2,4 @@
 pip/
 
 btop.log
+/fish/.config/fish/conf.d/secret.fish
