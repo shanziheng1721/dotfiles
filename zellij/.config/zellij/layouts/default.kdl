@@ -2,10 +2,10 @@ layout {
     default_tab_template {
         children
         pane size=1 borderless=true {
-            plugin location="file:/Users/szh/.config/zellij/plugins/zjstatus.wasm" {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
                 format_left   "{mode} #[fg=#89B4FA,bold]{session}"
                 format_center "{tabs}"
-                format_right  "{command_git_branch} {datetime}"
+                format_right  "{command_git_branch} {command_cpu} Keep calm and call .clone()! {datetime}"
                 format_space  ""
 
                 border_enabled  "false"
@@ -26,8 +26,15 @@ layout {
                 command_git_branch_interval    "10"
                 command_git_branch_rendermode  "static"
 
+                // a command line tool called rumm (made by me, shanziheng1721) is required in order to display cpu usage
+                // cargo install rumm
+                command_cpu_command     "rumm -n -p 4"
+                command_cpu_format      "#[fg=#a6e3a1] {stdout} "
+                command_cpu_interval    "0.5"
+                command_cpu_rendermode  "dynamic"
+
                 datetime        "#[fg=#6C7086,bold] {format} "
-                datetime_format "%A, %d %b %Y %H:%M"
+                datetime_format "%A, %d %b %Y %H:%M:%S"
                 datetime_timezone "Asia/Shanghai"
             }
         }
