@@ -18,6 +18,12 @@ font-size = 16
 macos-icon = xray
 macos-option-as-alt = true
 
+# mouse
+mouse-hide-while-typing = true
+
+# shader
+custom-shader = ./shaders/cursor_blaze.glsl
+
 # theme
 theme = One Double Dark
 
