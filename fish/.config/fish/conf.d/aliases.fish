@@ -40,12 +40,10 @@ abbr --add da dir-assistant
 alias dfc="cd ~/.dotfiles/"
 alias dfcreadme="nvim ~/.dotfiles/README.md"
 alias nvimconfig="cd ~/.config/nvim/"
-alias astroconfig="cd ~/.dotfiles/astronvim4/.config/nvim/"
 alias lazyconfig="cd ~/.dotfiles/lazyvim/.config/nvim/"
 alias fishconfig="nvim ~/.dotfiles/fish/.config/fish/config.fish && source ~/.config/fish/config.fish"
-alias tmuxconfig="nvim ~/.dotfiles/tmux/.config/tmux/tmux.conf"
-alias wezconfig="nvim ~/.wezterm.lua"
-alias zellijconfig="nvim ~/.config/zellij/config.kdl"
+alias gconf="nvim ~/.dotfiles/ghostty/.config/ghostty/config.ghostty"
+alias zellijconfig="cd ~/.config/zellij/"
 alias snippets="cd ~/.config/nvim/snippets/"
 
 # ── Fastfetch ────────────────────────────────────────────
