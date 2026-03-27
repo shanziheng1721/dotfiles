@@ -23,6 +23,8 @@ mouse-hide-while-typing = true
 
 # shader
 custom-shader = ./shaders/cursor_blaze.glsl
+custom-shader = ./shaders/slash.glsl
+custom-shader = ./shaders/sparks.glsl
 
 # theme
 theme = One Double Dark
