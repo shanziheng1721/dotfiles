@@ -24,6 +24,7 @@ abbr --add crr cargo run --release
 abbr --add crre cargo run --release --example
 abbr --add cs cargo search
 abbr --add ct cargo test
+abbr --add ctr cargo test --release
 abbr --add cup cargo install-update -a
 abbr --add cui cargo uninstall
 
