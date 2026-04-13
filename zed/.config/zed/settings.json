@@ -9,9 +9,9 @@
     "theme": {
         "mode": "system",
         "light": "One Light",
-        "dark": "One Dark"
+        "dark": "Catppuccin Frappé"
     },
-    "icon_theme": "Zed (Default)",
+    "icon_theme": "Catppuccin Frappé",
     // The name of a base set of key bindings to use.
     // This setting can take six values, each named after another
     // text editor:
@@ -24,10 +24,6 @@
     // 6. "TextMate"
     "base_keymap": "VSCode",
     // Features that can be globally enabled or disabled
-    "features": {
-        // Which edit prediction provider to use.
-        "edit_prediction_provider": "zed"
-    },
     // The name of a font to use for rendering text in the editor
     // ".ZedMono" currently aliases to Lilex
     // but this may change in the future.
@@ -73,7 +69,7 @@
     // The default font size for text in the UI
     "ui_font_size": 16,
     // The default font size for text in the agent panel. Falls back to the UI font size if unset.
-    "agent_font_size": null,
+    "agent_ui_font_size": null,
     // How much to fade out unused code.
     "unnecessary_code_fade": 0.3,
     // Active pane styling settings.
@@ -319,7 +315,7 @@
     // For example, when you select text and type (, Zed will surround the text with ().
     "use_auto_surround": true,
     // Whether indentation should be adjusted based on the context whilst typing.
-    "auto_indent": true,
+    "auto_indent": "syntax_aware",
     // Whether indentation of pasted content should be adjusted based on the context.
     "auto_indent_on_paste": true,
     // Controls how the editor handles the autoclosed characters.
@@ -577,7 +573,7 @@
     // to both the horizontal and vertical delta values while scrolling. Fast scrolling
     // happens when a user holds the alt or option key while scrolling.
     "fast_scroll_sensitivity": 4.0,
-    "relative_line_numbers": false,
+    "relative_line_numbers": "disabled",
     // If 'search_wrap' is disabled, search result do not wrap around the end of the file.
     "search_wrap": true,
     // Search options to enable by default when opening new project and buffer searches.
@@ -864,7 +860,6 @@
         //
         // Note: This setting has no effect on external agents that support permission modes, such as Claude Code.
         //       You can set `agent_servers.claude.default_mode` to `bypassPermissions` to skip all permission requests.
-        "always_allow_tool_actions": false,
         // When enabled, the agent will stream edits.
         "stream_edits": false,
         // When enabled, agent edits will be displayed in single-file editors for review
@@ -1031,7 +1026,7 @@
         // Whether to open tabs in preview mode when selected from the file finder.
         "enable_preview_from_file_finder": false,
         // Whether a preview tab gets replaced when code navigation is used to navigate away from the tab.
-        "enable_preview_from_code_navigation": false
+        "enable_keep_preview_on_code_navigation": false
     },
     // Settings related to the file finder.
     "file_finder": {
@@ -1075,7 +1070,7 @@
         //   * `true`: Use all gitignored files
         //   * `false`: Use only the files Zed had indexed
         //   * `null`: Be smart and search for ignored when called from a gitignored worktree
-        "include_ignored": null
+        "include_ignored": "smart"
     },
     // Whether or not to remove any trailing whitespace from lines of a buffer
     // before saving it.
@@ -1258,43 +1253,9 @@
     //      "load_direnv": "shell_hook"
     "load_direnv": "direct",
     "edit_predictions": {
-        // A list of globs representing files that edit predictions should be disabled for.
-        // There's a sensible default list of globs already included.
-        // Any addition to this list will be merged with the default list.
-        // Globs are matched relative to the worktree root,
-        // except when starting with a slash (/) or equivalent in Windows.
-        "disabled_globs": [
-            "**/.env*",
-            "**/*.pem",
-            "**/*.key",
-            "**/*.cert",
-            "**/*.crt",
-            "**/.dev.vars",
-            "**/secrets.yml",
-            "**/.zed/settings.json", // zed project settings
-            "/**/zed/settings.json", // zed user settings
-            "/**/zed/keymap.json"
-        ],
-        // When to show edit predictions previews in buffer.
-        // This setting takes two possible values:
-        // 1. Display predictions inline when there are no language server completions available.
-        //     "mode": "eager"
-        // 2. Display predictions inline only when holding a modifier key (alt by default).
-        //     "mode": "subtle"
-        "mode": "eager",
-        // Copilot-specific settings
-        // "copilot": {
-        //   "enterprise_uri": "",
-        //   "proxy": "",
-        //   "proxy_no_verify": false
-        // },
-        // Whether edit predictions are enabled when editing text threads.
-        // This setting has no effect if globally disabled.
-        "enabled_in_text_threads": true,
-        "copilot": {
-            "enterprise_uri": null,
-            "proxy": null,
-            "proxy_no_verify": null
+        "provider": "zed",
+        "ollama": {
+            "max_output_tokens": 105
         }
     },
     // Settings specific to journaling
@@ -1673,7 +1634,7 @@
                 "allowed": true
             }
         },
-        "HEEX": {
+        "HEEx": {
             "language_servers": [
                 "elixir-ls",
                 "!expert",
