@@ -5,7 +5,7 @@ layout {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
                 format_left   "{mode} #[fg=#89B4FA,bold]{session}"
                 format_center "{tabs}"
-                format_right  "{command_git_branch} {command_cpu} Keep calm and call .clone()! {datetime}"
+                format_right  "{command_git_branch} {command_cpu} {datetime}"
                 format_space  ""
 
                 border_enabled  "false"
@@ -13,7 +13,7 @@ layout {
                 border_format   "#[fg=#6C7086]{char}"
                 border_position "top"
 
-                hide_frame_for_single_pane "true"
+                hide_frame_for_single_pane "false"
 
                 mode_normal  "#[bg=blue] "
                 mode_tmux    "#[bg=#ffc387] "
@@ -28,7 +28,7 @@ layout {
 
                 // a command line tool called rumm (made by me, shanziheng1721) is required in order to display cpu usage
                 // cargo install rumm
-                command_cpu_command     "rumm -n -p 4"
+                command_cpu_command     "rumm -n -p 4 -s 1000"
                 command_cpu_format      "#[fg=#a6e3a1] {stdout} "
                 command_cpu_interval    "0.5"
                 command_cpu_rendermode  "dynamic"
