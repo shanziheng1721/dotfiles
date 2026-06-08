@@ -814,6 +814,7 @@
     },
     "agent": {
         // Whether the agent is enabled.
+        "sidebar_side": "right",
         "enabled": true,
         // What completion mode to start new threads in, if available. Can be 'normal' or 'burn'.
         "preferred_completion_mode": "normal",
@@ -830,9 +831,10 @@
         // The default model to use when creating new threads.
         "default_model": {
             // The provider to use.
-            "provider": "zed.dev",
+            "enable_thinking": false,
+            "provider": "ollama",
             // The model to use.
-            "model": "claude-sonnet-4"
+            "model": "gemma4:e4b"
         },
         // Additional parameters for language model requests. When making a request to a model, parameters will be taken
         // from the last entry in this list that matches the model's provider and name. In each entry, both provider
@@ -1976,7 +1978,11 @@
     // Configures context servers for use by the agent.
     "context_servers": {},
     // Configures agent servers available in the agent panel.
-    "agent_servers": {},
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry"
+        }
+    },
     "debugger": {
         "stepping_granularity": "line",
         "save_breakpoints": true,
