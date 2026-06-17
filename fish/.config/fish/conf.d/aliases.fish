@@ -52,6 +52,9 @@ abbr --add ff fastfetch
 # ── Lazygit ──────────────────────────────────────────────
 abbr --add lg lazygit
 
+# ── Leetcode ─────────────────────────────────────────────
+alias leet="nvim leetcode.nvim"
+
 # ── Neovim ───────────────────────────────────────────────
 abbr --add n nvim
 
