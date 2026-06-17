@@ -1,6 +1,6 @@
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+#:schema https://yazi-rs.github.io/schemas/yazi.json
 
 [mgr]
 ratio = [1, 2, 5]
@@ -123,9 +123,9 @@ suppress_preload = false
 [plugin]
 fetchers = [
     # Mimetype
-    { id = "mime", url = "*/", run = "mime.dir", prio = "high" },
-    { id = "mime", url = "local://*", run = "mime.local", prio = "high" },
-    { id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
+    { id = "mime", group = "mime", url = "*/", run = "mime.dir", prio = "high" },
+    { id = "mime", group = "mime", url = "local://*", run = "mime.local", prio = "high" },
+    { id = "mime", group = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
 ]
 spotters = [
     { url = "*/", run = "folder" },
@@ -194,27 +194,27 @@ previewers = [
     { url = "*", run = "file" },
 ]
 prepend_fetchers = [
-    { id = "git", url = "*", run = "git" },
-    { id = "git", url = "*/", run = "git" },
+    { id = "git", group = "git", url = "*", run = "git" },
+    { id = "git", group = "git", url = "*/", run = "git" },
 ]
 prepend_previewers = [
-    { name = "*.ipynb", run = "nbpreview" },
-    { name = "*.csv", run = "duckdb" },
-    { name = "*.tsv", run = "duckdb" },
-    { name = "*.json", run = "duckdb" },
-    { name = "*.parquet", run = "duckdb" },
-    { name = "*.txt", run = "duckdb" },
-    { name = "*.xlsx", run = "duckdb" },
-    { name = "*.db", run = "duckdb" },
-    { name = "*.duckdb", run = "duckdb" },
+    { mime = "*.ipynb", run = "nbpreview" },
+    { mime = "*.csv", run = "duckdb" },
+    { mime = "*.tsv", run = "duckdb" },
+    { mime = "*.json", run = "duckdb" },
+    { mime = "*.parquet", run = "duckdb" },
+    { mime = "*.txt", run = "duckdb" },
+    { mime = "*.xlsx", run = "duckdb" },
+    { mime = "*.db", run = "duckdb" },
+    { mime = "*.duckdb", run = "duckdb" },
 ]
 prepend_preloaders = [
-    { name = "*.csv", run = "duckdb", multi = false },
-    { name = "*.tsv", run = "duckdb", multi = false },
-    { name = "*.json", run = "duckdb", multi = false },
-    { name = "*.parquet", run = "duckdb", multi = false },
-    { name = "*.txt", run = "duckdb", multi = false },
-    { name = "*.xlsx", run = "duckdb", multi = false },
+    { mime = "*.csv", run = "duckdb", multi = false },
+    { mime = "*.tsv", run = "duckdb", multi = false },
+    { mime = "*.json", run = "duckdb", multi = false },
+    { mime = "*.parquet", run = "duckdb", multi = false },
+    { mime = "*.txt", run = "duckdb", multi = false },
+    { mime = "*.xlsx", run = "duckdb", multi = false },
 ]
 
 [input]
