@@ -29,6 +29,19 @@ abbr --add b btop
 # ── Clear ────────────────────────────────────────────────
 abbr --add clc clear
 
+# ── Cocogitto ────────────────────────────────────────────────
+abbr --add gcbuild cog commit build \"\"
+abbr --add gcchore cog commit chore \"\"
+abbr --add gcci cog commit ci \"\"
+abbr --add gcdocs cog commit docs \"\"
+abbr --add gcfeat cog commit feat \"\"
+abbr --add gcfix cog commit fix \"\"
+abbr --add gcperf cog commit perf \"\"
+abbr --add gcref cog commit refactor \"\"
+abbr --add gcrev cog commit revert \"\"
+abbr --add gcstyle cog commit style \"\"
+abbr --add gctest cog commit test \"\"
+
 # ── Codecrafters ─────────────────────────────────────────
 abbr --add cct codecrafters test
 abbr --add ccs codecrafters submit
