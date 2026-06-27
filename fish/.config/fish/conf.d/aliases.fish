@@ -6,8 +6,10 @@
 # ── Navigation: Developer directory ─────────────────────
 if test -d ~/Developer
     alias dev="cd ~/Developer/"
+    alias she="cd ~/Developer/she"
 else
     alias dev="cd ~/dev/"
+    alias she="cd ~/dev/she"
 end
 
 alias dt="cd ~/Desktop/"
