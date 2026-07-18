@@ -8,7 +8,7 @@
 #   set -gx ZELLIJ_AUTO_ATTACH true
 #   set -gx ZELLIJ_AUTO_EXIT   true
 
-if not set -q ZELLIJ
+if not set -q ZELLIJ; and not set -q INSIDE_ZED
     if test "$ZELLIJ_AUTO_ATTACH" = true
         zellij attach -c
     else
