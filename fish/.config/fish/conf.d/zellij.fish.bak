@@ -8,14 +8,20 @@
 #   set -gx ZELLIJ_AUTO_ATTACH true
 #   set -gx ZELLIJ_AUTO_EXIT   true
 
-if not set -q ZELLIJ; and not set -q INSIDE_ZED
-    if test "$ZELLIJ_AUTO_ATTACH" = true
-        zellij attach -c
-    else
-        zellij
-    end
+if status is-interactive
+    if not set -q ZELLIJ; and not set -q INSIDE_ZED; and not set -q _ZELLIJ_AUTOSTART_GUARD
+        set -gx _ZELLIJ_AUTOSTART_GUARD 1
 
-    if test "$ZELLIJ_AUTO_EXIT" = true
-        kill $fish_pid
+        if test "$ZELLIJ_AUTO_ATTACH" = true
+            zellij attach -c
+        else
+            zellij
+        end
+
+        set -e _ZELLIJ_AUTOSTART_GUARD
+
+        if test "$ZELLIJ_AUTO_EXIT" = true
+            kill $fish_pid
+        end
     end
 end
