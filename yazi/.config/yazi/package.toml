@@ -10,23 +10,23 @@ hash = "87b9233a74325e95011670ed20bbd0d4"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "159eaba"
-hash = "7de446280b1ba8c49ffd86dbc24bbbe6"
+rev = "ea92cf4"
+hash = "9776f378459072b6c2875eae5addc49d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "bb758e2"
-hash = "7b625412411be411153886894d9acaf"
+rev = "1ef5fe0"
+hash = "17ebde15c4349f90aedbc45984b98db2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "bb758e2"
-hash = "88e56a64b7ce7c4314427452343fef17"
+rev = "1ef5fe0"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
 
 [[plugin.deps]]
 use = "pirafrank/what-size"
-rev = "179ebf6"
-hash = "57056b9728006881d580ccabe8154a9c"
+rev = "1cb456f"
+hash = "7699acf73a1079f8a4afef5cec84ce73"
 
 [[flavor.deps]]
 use = "Miuzarte/synthwave84"
