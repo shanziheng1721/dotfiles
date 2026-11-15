@@ -9,7 +9,7 @@
     "theme": {
         "mode": "system",
         "light": "One Light",
-        "dark": "Catppuccin Frappé",
+        "dark": "One Dark Pro",
     },
     "icon_theme": "Catppuccin Frappé",
     // The name of a base set of key bindings to use.
@@ -343,7 +343,7 @@
     "allow_rewrap": "in_comments",
     // Controls whether edit predictions are shown immediately (true)
     // or manually by triggering `editor::ShowEditPrediction` (false).
-    "show_edit_predictions": true,
+    "show_edit_predictions": false,
     // Controls whether edit predictions are shown in a given language scope.
     // Example: ["string", "comment"]
     "edit_predictions_disabled_in": [],
@@ -1260,9 +1260,10 @@
     //      "load_direnv": "shell_hook"
     "load_direnv": "direct",
     "edit_predictions": {
-        "provider": "zed",
+        "provider": "ollama",
         "ollama": {
-            "max_output_tokens": 105,
+            "model": "qwen2.5-coder:0.5b",
+            "max_output_tokens": 10000,
         },
     },
     // Settings specific to journaling
@@ -1749,6 +1750,7 @@
             "allow_rewrap": "anywhere",
         },
         "Python": {
+            "show_edit_predictions": false,
             "formatter": {
                 "language_server": {
                     "name": "ruff",
@@ -2022,7 +2024,7 @@
     // Examples:
     //   - "proxy": "socks5h://localhost:10808"
     //   - "proxy": "http://127.0.0.1:10809"
-    "proxy": null,
+    "proxy": "",
     // Set to configure aliases for the command palette.
     // When typing a query which is a key of this object, the value will be used instead.
     //
@@ -2052,7 +2054,11 @@
     // Configures context servers for use by the agent.
     "context_servers": {},
     // Configures agent servers available in the agent panel.
-    "agent_servers": {},
+    "agent_servers": {
+        "cursor": {
+            "type": "registry"
+        }
+    },
     "debugger": {
         "stepping_granularity": "line",
         "save_breakpoints": true,
