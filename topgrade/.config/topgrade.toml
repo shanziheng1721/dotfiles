@@ -22,7 +22,16 @@
 # sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["system", "git"]
+disable = [
+    "system",
+    "git_repos",
+    "containers",
+    "flutter",
+    "self_update",
+    "sdkman",
+    "cursor",
+    "cursor_agent",
+]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
